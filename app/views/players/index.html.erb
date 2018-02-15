@@ -11,6 +11,7 @@
       <th>email</th>
       <th>Tel</th>
       <th>Password</th>
+      <th>Team</th>
       <th>edit</th>
       <th>delete</th>
     </tr>
@@ -23,6 +24,11 @@
       <td><%= player.email %></td>
       <td><%= player.phone_number %></td>
       <td><%= player.password %></td>
+      <% if player.team.nil? %>
+      <td><%= link_to 'join team', join_team_player_path(player) %></td>
+      <% else %>
+      <td><%= player.team.name %></td>
+      <% end %>
       <td><%= link_to 'edit', edit_player_path(player.id) %></td>
       <td><%= link_to 'supp', player_path(player.id),
       method: :delete, data: { confirm: "Confime stp" }  %></td>

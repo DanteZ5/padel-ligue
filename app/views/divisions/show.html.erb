@@ -1,0 +1,28 @@
+<div class="container">
+  <h1 class='roboto'><%= @division.name %></h1>
+
+   <table class="table">
+     <tr>
+      <th>team</th>
+      <th>joueur 1</th>
+      <th>joueur 2</th>
+     </tr>
+    <% @division.teams.each do |team| %>
+    <tr>
+
+      <td><%= team.name %></td>
+      <% if team.players[0].nil? %>
+      <td><%= 'no player'%></td>
+      <% else %>
+      <td><%= team.players[0].first_name %> <%= team.players[0].last_name %></td>
+      <% end %>
+       <% if team.players[1].nil? %>
+      <td><%= 'no player' %></td>
+      <% else %>
+      <td><%= team.players[1].first_name %> <%= team.players[1].last_name %></td>
+      <% end %>
+
+    </tr>
+    <% end %>
+  </table>
+</div>

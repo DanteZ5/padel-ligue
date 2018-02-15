@@ -8,6 +8,27 @@
 
 puts 'Cleaning database...'
 Player.destroy_all
+Team.destroy_all
+Division.destroy_all
+
+
+puts 'Create 4 divisions'
+
+divisions_attributes = [
+{ name: 'Division 1' },
+{ name: 'Division 2' },
+{ name: 'Division 3' },
+{ name: 'Division 4' }
+]
+Division.create!(divisions_attributes)
+puts 'Divisions created!'
+
+puts 'Create 1 fake team'
+
+teams_attributes = { name: 'Bela / Lima', division_id: Division.last.id}
+Team.create!(teams_attributes)
+
+puts 'fake team created'
 
 puts 'Creating Bela & Lima...'
 players_attributes = [
@@ -16,15 +37,23 @@ players_attributes = [
     last_name:    'Belastaguin',
     email:        'fernando@gmail.com',
     phone_number: '0612345678',
-    password:     '1234'
+    password:     '1234',
+    team_id:       Team.last.id
   },
   {
     first_name:   'Pablo',
     last_name:    'Lima',
     email:        'pablo@gmail.com',
     phone_number: '0712345678',
-    password:     '1234'
+    password:     '1234',
+    team_id:       Team.last.id
   },
 ]
 Player.create!(players_attributes)
-puts 'Finished!'
+
+# puts 'Create a Bela/Lima team'
+# Team.create!(name: 'Bela/Lima')
+puts 'Players created!'
+
+
+puts 'All Finished!'

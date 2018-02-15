@@ -1,0 +1,16 @@
+<div class="container">
+  <h1 class='roboto'>Liste des divisions</h1>
+
+   <table class="table">
+    <tr>
+      <th>ID</th>
+      <th>name</th>
+    </tr>
+    <% @divisions.each do |division| %>
+    <tr>
+      <th><%= link_to division.id , division_path(division)  %></th>
+      <td><%= division.name %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

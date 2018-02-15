@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="col-md-4 col-md-offset-4">
+    <h1 class='roboto'><%= @player.first_name %> <%= @player.last_name %></h1>
+    <%= simple_form_for @player do |f| %>
+      <%= f.input :team_id, collection: @teams %>
+      <%= f.submit "join team", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

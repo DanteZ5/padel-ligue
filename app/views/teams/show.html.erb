@@ -1,0 +1,29 @@
+<div class="container">
+  <h1 class='roboto'>Team Description</h1>
+
+   <table class="table">
+     <tr>
+      <th>ID</th>
+      <th>name</th>
+      <th>division</th>
+      <th>joueur 1</th>
+      <th>joueur 2</th>
+
+    </tr>
+    <tr>
+      <th><%= @team.id %></th>
+      <td><%= @team.name %></td>
+      <td><%= @team.division.name %></td>
+      <% if @player1.nil? %>
+      <td><%= link_to 'add player', players_path %></td>
+      <% else %>
+      <td><%= @player1.first_name %> <%= @player1.last_name %></td>
+      <% end %>
+       <% if @player2.nil? %>
+      <td><%= link_to 'add player', players_path %></td>
+      <% else %>
+      <td><%= @player2.first_name %> <%= @player2.last_name %></td>
+      <% end %>
+    </tr>
+  </table>
+</div>

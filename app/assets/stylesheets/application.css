@@ -19,3 +19,13 @@
  .roboto {
   font-family: "Roboto Slab", serif;
  }
+
+ .my-navbar {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 20px;
+  align-items: center;
+  height: 80px;
+  background: #EEEEEE;
+  margin: 0 0 8px 0;
+}

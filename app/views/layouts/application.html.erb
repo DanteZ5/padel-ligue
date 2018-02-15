@@ -13,6 +13,11 @@
   </head>
 
   <body>
+    <div class="my-navbar">
+      <%= link_to 'Joueurs', players_path %>
+      <%= link_to 'Teams', teams_path  %>
+      <%= link_to 'Divisions', divisions_path  %>
+    </div>
     <%= yield %>
   </body>
 </html>

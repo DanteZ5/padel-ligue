@@ -1,0 +1,24 @@
+<div class="container">
+  <h1 class='roboto'>Liste des teams</h1>
+  <p><%= link_to 'Add a new team', new_team_path, class: "btn btn-primary" %></p>
+
+   <table class="table">
+    <tr>
+      <th>ID</th>
+      <th>name</th>
+      <th>division</th>
+      <th>edit</th>
+      <th>delete</th>
+    </tr>
+    <% @teams.each do |team| %>
+    <tr>
+      <th><%= link_to team.id , team_path(team) %></th>
+      <td><%= team.name %></td>
+      <td><%= team.division.name %></td>
+      <td><%= link_to 'edit', edit_team_path(team.id) %></td>
+      <td><%= link_to 'supp', team_path(team.id),
+      method: :delete, data: { confirm: "Confime stp" }  %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

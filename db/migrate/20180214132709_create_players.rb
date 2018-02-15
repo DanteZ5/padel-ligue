@@ -6,6 +6,7 @@ class CreatePlayers < ActiveRecord::Migration[5.1]
       t.string :email
       t.string :password
       t.string :phone_number
+      t.references :team, foreign_key: true
 
       t.timestamps
     end
