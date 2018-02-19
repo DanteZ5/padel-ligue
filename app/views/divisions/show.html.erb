@@ -6,6 +6,9 @@
       <th>team</th>
       <th>joueur 1</th>
       <th>joueur 2</th>
+      <th>joués</th>
+      <th>victoires</th>
+      <th>classement</th>
      </tr>
     <% @division.teams.each do |team| %>
     <tr>
@@ -21,7 +24,9 @@
       <% else %>
       <td><%= team.players[1].first_name %> <%= team.players[1].last_name %></td>
       <% end %>
-
+      <td><%= team.score %></td>
+      <td><%= team.played %></td>
+      <td><%= team.rank %></td>
     </tr>
     <% end %>
   </table>

@@ -1,6 +1,7 @@
 class Team < ApplicationRecord
   belongs_to :division
   has_many :players
+  has_many :matchs, through: :match_team
   validates :name, presence: true
   after_initialize :init
 

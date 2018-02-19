@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180215080034) do
+ActiveRecord::Schema.define(version: 20180216153358) do
 
   create_table "divisions", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "match_teams", force: :cascade do |t|
+    t.integer "match_id"
+    t.integer "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["match_id"], name: "index_match_teams_on_match_id"
+    t.index ["team_id"], name: "index_match_teams_on_team_id"
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.string "date"
+    t.string "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

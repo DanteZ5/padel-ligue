@@ -7,6 +7,9 @@
       <th>ID</th>
       <th>name</th>
       <th>division</th>
+      <th>joués</th>
+      <th>victoires</th>
+      <th>classement</th>
       <th>edit</th>
       <th>delete</th>
     </tr>
@@ -15,6 +18,9 @@
       <th><%= link_to team.id , team_path(team) %></th>
       <td><%= team.name %></td>
       <td><%= team.division.name %></td>
+      <td><%= team.score %></td>
+      <td><%= team.played %></td>
+      <td><%= team.rank %></td>
       <td><%= link_to 'edit', edit_team_path(team.id) %></td>
       <td><%= link_to 'supp', team_path(team.id),
       method: :delete, data: { confirm: "Confime stp" }  %></td>
